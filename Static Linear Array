@@ -1,0 +1,10 @@
+#include <stdio.h>
+#define nc 20
+
+int main() {
+	unsigned char A1D[8] = {'I', 'L', 'D', 'A', 'T', 'O', 'S', '*'};
+	int i;
+	
+	}
+	return 0;
+}
