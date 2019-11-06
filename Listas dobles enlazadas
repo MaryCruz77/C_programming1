@@ -1,0 +1,66 @@
+/*--------------------Bibliotecas---------*/
+#include <stdio.h>
+
+/*-------------Estructura-------------------*/
+typedef struct nodoi{
+    int elem;
+    struct nodoi *next;
+    struct nodoi *prev;
+}nodoi;
+
+/*---------------Encabezados de funciones-------------*/
+nodoi *CreateiLD(nodoi **tail);
+int InsertxOrd(nodoi *head, nodoi *tail, int item);
+int DeleteLDi(nodoi *head, int item);
+/*----------------Programa principal-------------------*/
+int main(){
+    nodoi *H=0;
+    nodoi *T=0;
+    H=CreateiLD(&(T));
+    printf("%d",InsertxOrd(H, T, 8));
+    /*printf("Head: %p", H);
+    printf("\nHead prev: %p", H->prev);
+    printf("\nHead next: %p", H->next);
+    printf("\nTail: %p", T);
+    printf("\nTail prev: %p", T->prev);
+    printf("\nTail next: %p", T->next);
+    */return 0;
+}
+
+/*--------------Funciones------------------*/
+nodoi *CreateiLD(nodoi **tail){ //Crea lista
+    nodoi *H=0;
+    nodoi *T=0;
+    if((H=malloc(sizeof(nodoi)))==0){  //Crea espacio de memoria de Head
+        return 0;
+    }
+    if((T=malloc(sizeof(nodoi)))==0){  //Crea espacio de memoria de Tail
+        free(H); //Liberamos el espacio de memoria de Head
+        return 0;
+    }
+    H->prev=H; //Se apunta hacia el mismo
+    H->next=T; //Apunta a tail
+    T->prev=H;//Apunta a head
+    T->next=T;//Se apunta hacia el mismo
+    *(tail)=T;//contenido de T
+    return H;
+}
+
+int InsertxOrd(nodoi *head, nodoi *tail, int item){
+    nodoi *apnd=head->next;
+    nodoi *newitem=0;
+    if(head==0){
+        return 0;
+    }
+    if(newitem=malloc(sizeof(nodoi))==0){
+        return 0;
+    }
+    while(apnd->next!=tail && apnd->elem<newitem){
+        apnd=apnd->next;
+    }
+    
+    return 1;
+}
+int DeleteLDi(nodoi *head, int item){
+    
+}
