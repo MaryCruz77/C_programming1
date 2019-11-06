@@ -58,7 +58,11 @@ int InsertxOrd(nodoi *head, nodoi *tail, int item){
     while(apnd->next!=tail && apnd->elem<newitem){
         apnd=apnd->next;
     }
-    
+    newitem->elem=item;
+    newitem->prev=apnd;
+    newitem->next=apnd->next;
+    apnd->next=newitem;
+    newitem->next->prev=newitem;
     return 1;
 }
 int DeleteLDi(nodoi *head, int item){
