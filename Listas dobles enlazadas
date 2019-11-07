@@ -66,5 +66,21 @@ int InsertxOrd(nodoi *head, nodoi *tail, int item){
     return 1;
 }
 int DeleteLDi(nodoi *head, int item){
-    
+    else
+
+if  ( y > x && y > z )
+
+printf(“El número mayor es: %d”, y);
+
+else
+
+if  ( z > x && z > y )
+
+printf(“El número mayor es: %d”, z);
+
+else
+
+printf(“Los tres números son iguales”);
+
+}
 }
